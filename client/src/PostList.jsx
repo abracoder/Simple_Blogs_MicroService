@@ -8,7 +8,7 @@ export default () => {
 
     const fetchPosts = async() => {
         const res = await axios.get('http://localhost:4002/posts');
-        console.log(res.data);
+        console.log("postList ->",res.data);
         setPosts(res.data);
     }
 
@@ -17,7 +17,8 @@ export default () => {
     },[]);
     // console.log(posts);
 
-    const renderedPosts = Object.values(posts) // it will return an array of all the values of the post dict
+     // it will return an array of all the values of the post dict
+     const renderedPosts = Object.values(posts)
     .map(post => {
         return (
             <div className="card"

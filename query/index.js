@@ -35,13 +35,14 @@ app.post("/events",(req,res)=>{
         const{id,content,postId,status} = data;
         const post = posts[postId];
         const comment = post.comments.find(comment => {
-            return comment.id = id
+            return comment.id === id;
         });
         comment.content = content;
         comment.status = status;
+        console.log("query comment Updated",data);
 
     }
-    console.log(posts);
+    console.log("query Post",posts);
 
     res.send({});
 
